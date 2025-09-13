@@ -1,0 +1,31 @@
+# Override for development
+version: '3.8'
+
+services:
+  ingestor:
+    volumes:
+      - ./ingestor:/app/ingestor:ro
+      - ./common:/app/common:ro
+    environment:
+      - LOG_LEVEL=DEBUG
+    
+  analytics:
+    volumes:
+      - ./analytics:/app/analytics:ro
+      - ./common:/app/common:ro
+    environment:
+      - LOG_LEVEL=DEBUG
+    
+  dashboard:
+    volumes:
+      - ./dashboard:/app/dashboard:ro
+      - ./common:/app/common:ro
+    environment:
+      - LOG_LEVEL=DEBUG
+    
+  scheduler:
+    volumes:
+      - ./scheduler:/app/scheduler:ro
+      - ./common:/app/common:ro
+    environment:
+      - LOG_LEVEL=DEBUG

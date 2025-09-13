@@ -1,0 +1,21 @@
+symbols:
+  crypto: [BTCUSDT, ETHUSDT]
+  equities: [AAPL, MSFT, TSLA, SPY]
+options:
+  equities: [AAPL, SPY]
+  expiries_to_pull: 3   # nearest N expiries
+binance:
+  streams:
+    - trades
+    - bookTicker
+    - kline_1m
+storage:
+  base_path: ./data
+dashboard:
+  port: 8501
+analytics:
+  port: 8000
+risk:
+  lookback_days: 252
+  var_confidence: 0.05
+  ewma_lambda: 0.94
